@@ -1,0 +1,7 @@
+#simplealert{
+	display:none;
+	text-transform:capitalize;
+}
+.fancybox-close-small::after{
+	content: "X";
+}
