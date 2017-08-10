@@ -26,7 +26,7 @@ function simple_alert_plugin_create_menu() {
 function register_simple_alert_plugin_settings() {
 	//register our settings
 	register_setting( 'simple_alert_settings_group', 'alert_text' );
-	$post_types = get_post_types( array('public'   => true,'_builtin' => false), "names", "and" );
+	$post_types = get_post_types( array('public'   => true), "names", "and" );
 	if (empty($post_types)) {
 		$post_types = array('post','page');
 	}	
@@ -57,7 +57,7 @@ function simple_alert_settings_page() {
         <th scope="row">Select post type </th>
         <td>
 			<?php 	 
-			$post_types = get_post_types( array('public'   => true,'_builtin' => false), "names", "and" ); 
+			$post_types = get_post_types( array('public'   => true), "names", "and" ); 
 			if (empty($post_types)) {
 				$post_types = array('post','page');
 			}
@@ -168,5 +168,3 @@ function alert_popup( $content ) {
 add_filter( 'the_excerpt', 'alert_popup' );
 add_filter( 'the_content', 'alert_popup' );
  ?>
-   
-   
